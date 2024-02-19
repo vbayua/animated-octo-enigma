@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
+use App\Models\Issue;
+use Database\Factories\IssueFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +22,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        $user = User::create([
+            'name' => 'John Doe'
+        ]);
+
+        Issue::factory(3)->create([
+            'user_id' => $user->id
+        ]);
+
     }
 }
