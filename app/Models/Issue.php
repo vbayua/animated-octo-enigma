@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 
@@ -11,23 +12,23 @@ class Issue extends Model
 {
     use HasFactory;
 
-    public function user(): HasOne
+    public function user(): BelongsTo
     {
-        return $this->hasOne(User::class,'user_id');
+        return $this->belongsTo(User::class,'user_id');
     }
 
-    public function category(): HasOneOrMany
+    public function category(): BelongsTo
     {
-        return $this->hasOne(Category::class,'category_id');
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
-    public function level(): HasOne
+    public function level(): BelongsTo
     {
-        return $this->hasOne(IssueLevel::class,'level_id');
+        return $this->belongsTo(IssueLevel::class,'level_id');
     }
 
-    public function status(): HasOne
+    public function status(): BelongsTo
     {
-        return $this->hasOne(IssueStatus::class,'status_id');
+        return $this->belongsTo(IssueStatus::class,'status_id');
     }
 }
