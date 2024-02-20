@@ -1,6 +1,6 @@
 <header class="navbar bg-base-100 p-4">
     <div class="flex-1">
-        <a href="#" class="btn btn-ghost text-xl">SCAPA</a>
+        <a href="/" class="btn btn-ghost text-xl">SCAPA</a>
     </div>
 
     <nav>

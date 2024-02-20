@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <x-header />
 
     <main>
-        {{$slot}}
+        {{ $slot }}
 
         {{-- <div class="flex justify-center justify-items-center">
             <article class="max-w-3xl py-11 shadow-slate-100">
