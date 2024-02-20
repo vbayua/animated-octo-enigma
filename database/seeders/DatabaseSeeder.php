@@ -31,5 +31,13 @@ class DatabaseSeeder extends Seeder
             'user_id' => $user->id
         ]);
 
+        $user = User::factory()->create([
+            'name' => 'Jane Doe'
+        ]);
+
+        Issue::factory(3)->create([
+            'user_id' => $user->id
+        ]);
+
     }
 }
