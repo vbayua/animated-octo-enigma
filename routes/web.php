@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Issue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,5 +27,7 @@ Route::get('login', function () {
 });
 
 Route::get('capa', function () {
-    return view('capa');
+    return view('capa', [
+        'temuan' => Issue::with(['user:id,name', 'category:id,name', 'status:id,name', 'level:id,name'])->get()
+    ]);
 });
